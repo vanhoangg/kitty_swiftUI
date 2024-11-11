@@ -1,24 +1,52 @@
 //
 //  ContentView.swift
-//  KittySwiftUI
+//  CountriesSwiftUI
 //
-//  Created by hoang.dinh on 11/11/24.
+//  Created by Alexey Naumov on 23.10.2019.
+//  Copyright © 2019 Alexey Naumov. All rights reserved.
 //
 
 import SwiftUI
+import Combine
+import EnvironmentOverrides
 
 struct ContentView: View {
+    
+    private let container: DIContainer
+    private let isRunningTests: Bool
+    
+    init(container: DIContainer, isRunningTests: Bool = ProcessInfo.processInfo.isRunningTests) {
+        self.container = container
+        self.isRunningTests = isRunningTests
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if isRunningTests {
+                Text("Running unit tests")
+            } else {
+                KittyHome()
+                    .attachEnvironmentOverrides(onChange: onChangeHandler)
+                    .inject(container)
+            }
         }
-        .padding()
+    }
+    
+    var onChangeHandler: (EnvironmentValues.Diff) -> Void {
+        return { diff in
+            if !diff.isDisjoint(with: [.locale, .sizeCategory]) {
+                self.container.appState[\.routing] = AppState.ViewRouting()
+            }
+        }
     }
 }
 
-#Preview {
-    ContentView()
+// MARK: - Preview
+
+#if DEBUG
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(container: .preview)
+    }
 }
+#endif

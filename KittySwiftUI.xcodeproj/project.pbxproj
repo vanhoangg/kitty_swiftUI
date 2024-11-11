@@ -6,8 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		730CEB3B2CE1BB9200E66678 /* EnvironmentOverrides in Frameworks */ = {isa = PBXBuildFile; productRef = 730CEB3A2CE1BB9200E66678 /* EnvironmentOverrides */; };
+		FEA6F1EA26D7D3552C9C990C /* Pods_KittySwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F3DBE903D7FD9F0370CDEB /* Pods_KittySwiftUI.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		04D1E1DC37351C20F8B3B91E /* Pods-KittySwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KittySwiftUI.release.xcconfig"; path = "Target Support Files/Pods-KittySwiftUI/Pods-KittySwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		41F3DBE903D7FD9F0370CDEB /* Pods_KittySwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KittySwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AA5FAA2CE1A4110031118F /* KittySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C055B5BE427B654F9A723A /* Pods-KittySwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KittySwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-KittySwiftUI/Pods-KittySwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730CEB3B2CE1BB9200E66678 /* EnvironmentOverrides in Frameworks */,
+				FEA6F1EA26D7D3552C9C990C /* Pods_KittySwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C433A002C9B707EF60A875E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41F3DBE903D7FD9F0370CDEB /* Pods_KittySwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		73AA5FA12CE1A4110031118F = {
 			isa = PBXGroup;
 			children = (
 				73AA5FAC2CE1A4110031118F /* KittySwiftUI */,
 				73AA5FAB2CE1A4110031118F /* Products */,
+				998A176959D53D745ECDB3E1 /* Pods */,
+				1C433A002C9B707EF60A875E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +65,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		998A176959D53D745ECDB3E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5C055B5BE427B654F9A723A /* Pods-KittySwiftUI.debug.xcconfig */,
+				04D1E1DC37351C20F8B3B91E /* Pods-KittySwiftUI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +81,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73AA5FB82CE1A4130031118F /* Build configuration list for PBXNativeTarget "KittySwiftUI" */;
 			buildPhases = (
+				039885A49B5EBD42EDE90E4E /* [CP] Check Pods Manifest.lock */,
 				73AA5FA62CE1A4110031118F /* Sources */,
 				73AA5FA72CE1A4110031118F /* Frameworks */,
 				73AA5FA82CE1A4110031118F /* Resources */,
+				73AA5FC42CE1A6520031118F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -64,8 +95,6 @@
 				73AA5FAC2CE1A4110031118F /* KittySwiftUI */,
 			);
 			name = KittySwiftUI;
-			packageProductDependencies = (
-			);
 			productName = KittySwiftUI;
 			productReference = 73AA5FAA2CE1A4110031118F /* KittySwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -94,6 +123,9 @@
 			);
 			mainGroup = 73AA5FA12CE1A4110031118F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				730CEB392CE1BB9200E66678 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 73AA5FAB2CE1A4110031118F /* Products */;
 			projectDirPath = "";
@@ -113,6 +145,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		039885A49B5EBD42EDE90E4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KittySwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73AA5FC42CE1A6520031118F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73AA5FA62CE1A4110031118F /* Sources */ = {
@@ -246,6 +320,7 @@
 		};
 		73AA5FB92CE1A4130031118F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5C055B5BE427B654F9A723A /* Pods-KittySwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -275,6 +350,7 @@
 		};
 		73AA5FBA2CE1A4130031118F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04D1E1DC37351C20F8B3B91E /* Pods-KittySwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		730CEB392CE1BB9200E66678 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/EnvironmentOverrides";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		730CEB3A2CE1BB9200E66678 /* EnvironmentOverrides */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 730CEB392CE1BB9200E66678 /* XCRemoteSwiftPackageReference "EnvironmentOverrides" */;
+			productName = EnvironmentOverrides;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73AA5FA22CE1A4110031118F /* Project object */;
 }

@@ -1,0 +1,6 @@
+framework module Pods_KittySwiftUI {
+  umbrella header "Pods-KittySwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
